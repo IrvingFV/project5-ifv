@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import useFetch from "../../hooks/useFetch"
 import { useNavigate } from "react-router-dom"
+import './styles/PokeCard.css'
 
 const PokeCard = ({ url }) => {
 
@@ -17,27 +18,33 @@ const PokeCard = ({ url }) => {
   }
 
   return (
-    <article onClick={handleNavigate} style={{ border: '5px solid black'}}>
-      <header>
-        <img src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
+    <article className={`pokecard ${pokemon?.types[0].type.name}`} onClick={handleNavigate} style={{ border: '5px solid black'}}>
+      <header className={`pokecard__header bg-${pokemon?.types[0].type.name}`}>
+        <img 
+        className="pokecard__img"
+        src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
       </header>
-      <section>
-        <h3>{pokemon?.name}</h3>
-        <ul>
+      <section className="pokecard__body">
+        <h3 className="pokecard__name">{pokemon?.name}</h3>
+        <ul className="pokecard__types">
           {
             pokemon?.types.map( typeInfo => (
-              <li key={typeInfo.type.url}>{typeInfo.type.name}</li>
+              <li
+              className="pokecard__types-item" 
+                key={typeInfo.type.url}>{typeInfo.type.name}</li>
             ))      
             }
         </ul>
        </section> 
-       <footer>
-          <ul>
+       <footer className="pokecard__footer">
+          <ul className="pokecard__stats">
              {
               pokemon?.stats.map(statInfo =>(
-                <li key={statInfo.stat.url}>
-                  <span>{statInfo.stat.name}<span>
-                  </span>{statInfo.base_stat}</span>
+                <li
+                className="pokecard__stats-item"
+                  key={statInfo.stat.url}>
+                  <span className="pokecard__stats-label">{statInfo.stat.name}</span>
+                  <span className="pokecard__stats-value">{statInfo.base_stat}</span>
                 </li>
               ))
              }

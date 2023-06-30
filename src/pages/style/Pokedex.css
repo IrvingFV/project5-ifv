@@ -1,0 +1,53 @@
+.pokemon_container{
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    padding:0.5em;
+    
+    
+    
+}
+.form_container{
+    padding: 0.2em;
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    justify-content: space-between;  
+}
+.form_search{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 350px;
+    min-width: 250px;
+    height: 40px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+.input_search{
+    border: none;
+    width: 3fr;
+}
+.boton_search{
+    width: 1fr;
+    background-color: rgb(243, 115, 115);
+    color: white;
+    border: none;
+    
+    
+}
+.select_container{
+    max-width: 250px;
+    min-width: 110px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+.options{
+    width: 100%;
+    border: none;  
+}
+@media only screen and (max-width: 550px) {
+    .form_search{
+        width: 250px;
+    
+    }
+  }

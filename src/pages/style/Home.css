@@ -1,0 +1,35 @@
+.home{
+    padding-top: 8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    gap: 1em;
+} 
+
+.h2_trainer{
+    color: rgb(224, 89, 89);
+    padding-top: 1em;
+}
+.form_handle{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 40px;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    
+}
+.input_nombre{
+    width: 75%;
+    border: none;
+    
+}
+.btn_comenzar{
+    
+    background-color: rgb(243, 20, 20);
+    border-radius: 0 0.8 0 0.8;
+    border: none;
+    color: white;
+    width: 25%;
+}
